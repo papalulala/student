@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠色旅行 - 森林之歌</title>
+    <style>
+        :root {
+            --primary-color: #3e5241;
+            --text-color: #2b2b2b;
+            --bg-color: #fcfbfa;
+            --card-bg: #ffffff;
+            --accent-color: #e5a93c;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            position: relative;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
+
+        /* Top Header Style */
+        .header-series {
+            grid-column: 1 / -1;
+            border-bottom: 2px solid #f0ede9;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .header-series h1 {
+            font-size: 2.2rem;
+            color: #4a5e4d;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .header-series p {
+            font-size: 1.1rem;
+            color: #8c7e6c;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        /* Left Visual Column */
+        .visual-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Native CSS Artwork of Forest Song Night Scene */
+        .artwork-container {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(to bottom, #1a2238 0%, #2b3a60 50%, #483d61 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+        }
+
+        .sky-stars {
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 120px 120px, 90px 90px, 150px 150px;
+            background-position: 0 0, 40px 60px, 100px 10px;
+            opacity: 0.6;
+        }
+
+        .mountains-back {
+            position: absolute;
+            bottom: 25%;
+            width: 120%;
+            height: 30%;
+            left: -10%;
+            background: #1e283d;
+            clip-path: polygon(0% 60%, 15% 45%, 35% 55%, 55% 35%, 75% 50%, 90% 40%, 100% 55%, 100% 100%, 0% 100%);
+            opacity: 0.7;
+        }
+
+        .ground-green-back {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background: #27401c;
+            clip-path: polygon(0 40%, 30% 25%, 70% 45%, 100% 30%, 100% 100%, 0 100%);
+        }
+
+        .ground-green-front {
+            position: absolute;
+            bottom: 0;
+            width: 120%;
+            left: -10%;
+            height: 20%;
+            background: #476a22;
+            clip-path: polygon(0 50%, 40% 30%, 80% 55%, 100% 40%, 100% 100%, 0 100%);
+        }
+
+        .wood-dome-shadow {
+            position: absolute;
+            bottom: 12%;
+            right: 25%;
+            width: 130px;
+            height: 140px;
+            background: #d4a35d;
+            border-radius: 65px 65px 20px 20px;
+            clip-path: polygon(10% 100%, 15% 50%, 30% 15%, 50% 0%, 70% 15%, 85% 50%, 90% 100%);
+            box-shadow: 0 0 30px rgba(247, 181, 56, 0.6);
+        }
+
+        .wood-dome-glow {
+            position: absolute;
+            bottom: 12%;
+            right: 25%;
+            width: 130px;
+            height: 140px;
+            background: linear-gradient(to top, #ffdf7a 20%, #e89c23 70%, #7a4f15 100%);
+            border-radius: 65px 65px 20px 20px;
+            clip-path: polygon(10% 100%, 15% 50%, 30% 15%, 50% 0%, 70% 15%, 85% 50%, 90% 100%);
+        }
+
+        .wood-dome-top {
+            position: absolute;
+            top: 0;
+            left: 35%;
+            width: 30%;
+            height: 15%;
+            background: #543717;
+            border-radius: 5px;
+        }
+
+        .dome-stripes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(54, 35, 11, 0.4) 12px, rgba(54, 35, 11, 0.4) 16px);
+        }
+
+        .dome-entrance {
+            position: absolute;
+            bottom: 0;
+            left: 35%;
+            width: 30%;
+            height: 35%;
+            background: #2b1a08;
+            border-radius: 20px 20px 0 0;
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.8);
+        }
+
+        .entrance-glow {
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            width: 20%;
+            height: 25%;
+            background: #fff3cc;
+            border-radius: 10px 10px 0 0;
+            filter: blur(2px);
+        }
+
+        .walkway-wood {
+            position: absolute;
+            bottom: 8%;
+            left: 10%;
+            width: 55%;
+            height: 22%;
+            background: #96734b;
+            clip-path: polygon(0% 70%, 60% 40%, 80% 60%, 100% 50%, 85% 100%, 0% 100%);
+            transform: rotate(-2deg);
+        }
+
+        .walkway-wood-top {
+            position: absolute;
+            bottom: 18%;
+            left: 12%;
+            width: 50%;
+            height: 5%;
+            background: #c29d6f;
+            clip-path: polygon(0% 100%, 65% 0%, 100% 40%, 0% 100%);
+        }
+
+        /* Right Content Column */
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .brand-section {
+            margin-top: 10px;
+        }
+
+        .brand-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .address-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f7f5f2;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .qr-mock {
+            width: 45px;
+            height: 45px;
+            background: #333;
+            padding: 3px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            border: 2px solid #333;
+            background-color: white;
+        }
+        .qr-box { background: #333; }
+        .qr-box.white { background: white; }
+
+        .address-text {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .description-text {
+            font-size: 0.95rem;
+            color: #444;
+            text-align: justify;
+            white-space: pre-line;
+            border-left: 3px solid #ced6ce;
+            padding-left: 15px;
+        }
+
+        /* Map Section */
+        .map-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 1px solid #e6e3df;
+            margin-top: auto;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 220px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="header-series">
+            <h1>綠色旅行</h1>
+            <p>散步 ∕ 腳踏車</p>
+        </header>
+
+        <!-- Left Visual -->
+        <div class="visual-column">
+            <div class="artwork-container">
+                <div class="sky-stars"></div>
+                <div class="mountains-back"></div>
+                <div class="ground-green-back"></div>
+                
+                <!-- Forest Song Dome Construction using CSS -->
+                <div class="wood-dome-shadow"></div>
+                <div class="wood-dome-glow">
+                    <div class="wood-dome-top"></div>
+                    <div class="dome-stripes"></div>
+                    <div class="dome-entrance">
+                        <div class="entrance-glow"></div>
+                    </div>
+                </div>
+                
+                <div class="walkway-wood"></div>
+                <div class="walkway-wood-top"></div>
+                <div class="ground-green-front"></div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-column">
+            
+            <div class="brand-section">
+                <h2 class="brand-title">森林之歌</h2>
+            </div>
+
+            <!-- Address & QR Box -->
+            <div class="address-box">
+                <div class="qr-mock">
+                    <div class="qr-box"></div><div class="qr-box"></div><div class="qr-box"></div>
+                    <div class="qr-box"></div><div class="qr-box white"></div><div class="qr-box"></div>
+                    <div class="qr-box"></div><div class="qr-box"></div><div class="qr-box"></div>
+                </div>
+                <div class="address-text">
+                    600 嘉義市東區文化路
+                </div>
+            </div>
+
+            <!-- Full digitized text from the manual leaflet -->
+            <p class="description-text">森林之歌是嘉義市的一處特色地景藝術，以森林、木材、鐵道及阿里山林業文化等創作意象，結合木材、藤蔓、石材等構築藝術元素，打造出充滿自然氣息與暖意氛圍的公共藝術空間。
+
+它是以大型蛋形外結構為特色，外觀彷彿一座來自森林的神秘巢穴，象徵著嘉義與阿里山深厚的歷史連結。白天可以欣賞獨特的藝術造型與周圍景緻，夜晚在燈光照射下，更呈現出夢幻而浪漫的氛圍。
+
+森林之歌不單是嘉義市具有代表性的地標藝術，也是適合散步、拍照及感受城市文化的休閒景點。來到嘉義旅遊時，不妨安排一趟漫步於森林之歌之旅，在藝術與自然交織的寧靜中，聆聽內心最純粹的聲音。</p>
+
+            <!-- Interactive Google Map Section -->
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m120.4502593!2d23.4880571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e943261a8412b%3A0x606bf50882e30f14!2z5qOu5p6X5LmL6YyM!5e0!3m2!1zhk!2stw!4v1710000000000!5m2!1zhk!2stw" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

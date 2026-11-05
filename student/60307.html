@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠色旅行 - 齊柏林唱片</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            background-color: #fcfbfa;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header-title {
+            font-size: 42px;
+            color: #8fa47e;
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .header-subtitle {
+            font-size: 20px;
+            color: #a39480;
+            margin-top: 5px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        .illustration-container {
+            background-color: #f5f2eb;
+            padding: 20px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250px;
+            border: 1px solid #e6dfd3;
+        }
+        /* 類海報幾何小屋線條意象 */
+        .house-art {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            position: relative;
+        }
+        .house-roof {
+            position: absolute;
+            top: 20px; left: 10px;
+            width: 0; height: 0;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            border-bottom: 40px solid #cbb58b;
+        }
+        .house-body {
+            position: absolute;
+            top: 60px; left: 40px;
+            width: 200px; height: 120px;
+            background-color: #abbca3;
+            border: 2px solid #5a6654;
+        }
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 25px;
+        }
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #333 25%, transparent 25%), 
+                        linear-gradient(-45deg, #333 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #333 75%), 
+                        linear-gradient(-45deg, transparent 75%, #333 75%);
+            background-size: 10px 10px;
+            background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+            border: 2px solid #333;
+        }
+        .address {
+            font-size: 12px;
+            color: #7a7a7a;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+        .shop-name {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin: 10px 0 20px 0;
+            letter-spacing: 4px;
+            border-bottom: 3px solid #2c2c2c;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .description-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555555;
+            text-align: justify;
+        }
+        .footer-tag {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #8fa47e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-column">
+        <div>
+            <h1 class="header-title">綠色旅行</h1>
+            <div class="header-subtitle">散步 / 腳踏車</div>
+        </div>
+        <div class="illustration-container">
+            <div class="house-art">
+                <div class="house-roof"></div>
+                <div class="house-body"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="right-column">
+        <div class="qr-section">
+            <div class="qr-placeholder"></div>
+            <div class="address">600嘉義市西區書院里西門街207號</div>
+        </div>
+        
+        <div>
+            <div class="shop-name">齊柏林</div>
+            <div class="description-text">
+                齊柏林唱片是嘉義與音樂愛好者相關的一個特色店名。<br>
+                對於喜歡音樂的人來說，唱片行不只是購買音樂專輯的地方，也是尋找喜愛歌手手作品、探索不同音樂風格的好去處。在這裡人們可以感受音樂的魅力，享受挑選專輯的樂趣，也能透過音樂留下美好的回憶。如果有機會來到嘉義，不妨了解及柏林唱片的特色，認識更多音樂文化，為生活增添一些美好的旋律。
+            </div>
+            <div class="footer-tag"># 嘉義在地風格小店 # 慢活慢旅</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

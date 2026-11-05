@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60319 - 初禾甜點．咖啡</title>
+    <style>
+        :root {
+            --primary-green: #3D6442;
+            --bg-cream: #FAF6F0;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --accent-orange: #EAA850;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* 頂部排版 */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #F0EAE1;
+            padding-bottom: 30px;
+        }
+
+        .title-left h1 {
+            font-size: 3rem;
+            color: var(--primary-green);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .title-left p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .info-right {
+            text-align: right;
+            max-width: 400px;
+        }
+
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #333;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .address-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: bold;
+            background: #F5EFE6;
+            padding: 6px 12px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* 主要內容區 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* 左側插畫模擬區 */
+        .illustration-box {
+            background-color: #E2D7C5;
+            border-radius: 8px;
+            padding: 30px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mock-window-view {
+            width: 100%;
+            height: 100%;
+            background: #C4A482;
+            border: 12px solid #5A3E25;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .mock-door {
+            width: 35%;
+            height: 85%;
+            background: #EADCB9;
+            border-left: 4px solid #A07855;
+        }
+
+        .mock-chair {
+            width: 40px;
+            height: 60px;
+            background: #8B5A2B;
+            border-radius: 4px;
+        }
+
+        /* 右側內文 */
+        .intro-text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .brand-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #000;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #444444;
+            text-align: justify;
+        }
+
+        /* 頁尾響應式調整 */
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .info-right {
+                text-align: left;
+            }
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .illustration-box {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 頂部區塊 -->
+        <header class="header-section">
+            <div class="title-left">
+                <h1>綠色旅行</h1>
+                <p>散步 / 腳踏車</p>
+            </div>
+            <div class="info-right">
+                <div class="qr-placeholder">QR Code 掃描</div>
+                <div>
+                    <span class="address-text">600嘉義市西區育英里民生南路137號</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要視覺與文案區塊 -->
+        <main class="main-content">
+            <!-- 左側極簡日系插畫風模擬 -->
+            <div class="illustration-box">
+                <div class="mock-window-view">
+                    <div class="mock-door"></div>
+                    <div class="mock-chair"></div>
+                </div>
+            </div>
+
+            <!-- 右側文案 -->
+            <div class="intro-text-box">
+                <h2 class="brand-title">初禾甜點</h2>
+                <p class="description">
+                    位於嘉義市的初禾甜點咖啡，以精緻甜點與香醇咖啡，打造一處溫馨療癒的午後時光。
+                    無論是與朋友相聚、享受獨處時光，或是尋找生活中的小確幸，都能在甜點的細膩滋味與咖啡的迷人香氣中，感受恰到好處的放鬆與美好，為日常增添一份甜蜜與溫度。
+                </p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

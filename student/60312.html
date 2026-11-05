@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60312 - 嘉義公園綠色旅行</title>
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --accent-blue: #1d3557;
+            --light-bg: #f4f9f4;
+            --text-color: #333333;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-green), #40916c);
+            color: #ffffff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .main-image-container {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .image-caption {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: bold;
+        }
+        .intro-box {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-green);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-blue);
+            border-bottom: 2px solid #e1eec1;
+            padding-bottom: 0.5rem;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .info-list li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        footer {
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>綠色旅行：嘉義公園</h1>
+        <p>散步 / 腳踏車低碳輕旅行</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 新增的地標圖片區塊 -->
+        <div class="main-image-container">
+            <img class="main-image" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Chiayi_Tower_20110129.jpg" alt="嘉義公園射日塔">
+            <div class="image-caption">公園核心地標 — 射日塔 (Chiayi Tower)</div>
+        </div>
+
+        <div class="intro-box">
+            <h3>景點簡介</h3>
+            <p>嘉義公園位於嘉義市，是一座歷史悠久、景色優美的公園，也是當地著名的休閒與觀光景點。園區內綠樹成蔭、環境清幽，適合市民眾散步、運動及親近自然。公園內有射日塔、孔廟及二二八紀念碑等景點，融合了自然景觀、歷史文化與休閒功能。遊客除了可以欣賞美麗的風景，也能認識嘉義市的歷史與文化。無論是親子出遊、朋友踏青，或是獨自散心，嘉義公園都是放鬆身心的好地方。它不僅是市民日常休閒的重要場所，也展現了嘉義市豐富的文化特色與城市魅力。</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>📍 景點資訊</h3>
+                <ul class="info-list">
+                    <li><strong>地址：</strong>600嘉義市東區東川里啟明路264號</li>
+                    <li><strong>網頁代碼：</strong>60312</li>
+                    <li><strong>推薦玩法：</strong>適合漫步林蔭大道，或騎乘腳踏車慢遊園區</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🏛️ 園區核心景點</h3>
+                <ul class="info-list">
+                    <li><strong>射日塔：</strong>高 62 公尺的絕美高塔，可一覽嘉義市景。</li>
+                    <li><strong>嘉義孔廟：</strong>古色古香的經典中式儒家建築。</li>
+                    <li><strong>歷史紀念碑：</strong>富有教育與時代意義的文化地標。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 網頁專案：60312. 保留所有權利。</p>
+    </footer>
+
+</body>
+</html>

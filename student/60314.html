@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森咖啡 Morikoohii - 綠色旅行</title>
+    <style>
+        :root {
+            --primary-color: #3d5a45;
+            --secondary-color: #8da189;
+            --text-dark: #2c2c2c;
+            --text-light: #555555;
+            --bg-light: #f9f8f6;
+            --card-bg: #ffffff;
+            --accent-color: #d4a373;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1050px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 頂部綠色旅行標題 */
+        .header-title {
+            margin-bottom: 40px;
+        }
+        .header-title h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 300;
+            letter-spacing: 4px;
+            display: flex;
+            align-items: center;
+        }
+        .header-title h1 span {
+            font-size: 16px;
+            color: var(--secondary-color);
+            margin-left: 15px;
+            letter-spacing: 2px;
+            border-left: 1px solid #ccc;
+            padding-left: 15px;
+        }
+
+        /* 主要雙欄版面 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* 左側插畫美化區 */
+        .illustration-card {
+            background: #f2f0eb;
+            border-radius: 12px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+        }
+
+        /* 純CSS精細重繪日式咖啡屋 */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to bottom, #e4edf2, #f2f0eb);
+        }
+
+        .roof-top {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            width: 85%;
+            height: 25px;
+            background: #3a3b45;
+            transform: skewX(-20deg);
+            border-radius: 2px;
+            z-index: 3;
+        }
+
+        .roof-side {
+            position: absolute;
+            top: 42%;
+            right: 5%;
+            width: 15%;
+            height: 20px;
+            background: #505261;
+            transform: skewY(15deg);
+            z-index: 2;
+        }
+
+        .house-body {
+            position: absolute;
+            top: 45%;
+            left: 10%;
+            width: 75%;
+            height: 45%;
+            background: #24252d;
+            border-radius: 0 0 4px 4px;
+            z-index: 1;
+        }
+
+        .window-main {
+            position: absolute;
+            top: 20%;
+            left: 55%;
+            width: 28%;
+            height: 45%;
+            background: #cca985;
+            border: 2px solid #1a1b20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .window-grid {
+            width: 80%;
+            height: 80%;
+            border: 1px solid #1a1b20;
+        }
+
+        .umbrella {
+            position: absolute;
+            bottom: 15%;
+            left: 12%;
+            width: 120px;
+            height: 140px;
+            z-index: 4;
+        }
+        .umbrella-top {
+            width: 100px;
+            height: 35px;
+            background: #dfcfbe;
+            border-radius: 100px 100px 0 0;
+            position: relative;
+        }
+        .umbrella-pole {
+            width: 4px;
+            height: 110px;
+            background: #5c4a3c;
+            margin-left: 48px;
+        }
+
+        .flower-pots {
+            position: absolute;
+            bottom: 10%;
+            left: 35%;
+            display: flex;
+            gap: 12px;
+            z-index: 5;
+        }
+        .pot {
+            width: 35px;
+            height: 20px;
+            background: #a3a19e;
+            border-radius: 2px;
+            position: relative;
+        }
+        .pot::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            width: 45px;
+            height: 15px;
+            background: #e65c65;
+            border-radius: 10px 10px 0 0;
+        }
+        .pot.green::before {
+            background: #739e73;
+        }
+
+        .shrub {
+            position: absolute;
+            bottom: 12%;
+            right: 12%;
+            width: 50px;
+            height: 50px;
+            background: #8cb867;
+            border-radius: 50%;
+            z-index: 4;
+        }
+        .shrub-trunk {
+            position: absolute;
+            bottom: -15px;
+            left: 22px;
+            width: 6px;
+            height: 20px;
+            background: #6b5443;
+        }
+
+        /* 右側文字排版區 */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-header {
+            margin-bottom: 25px;
+        }
+        .brand-title {
+            font-size: 42px;
+            color: var(--primary-color);
+            font-weight: 400;
+            letter-spacing: 6px;
+            line-height: 1.2;
+        }
+        .brand-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        .meta-box {
+            display: flex;
+            align-items: center;
+            background: #f4f6f4;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+            flex: 1;
+        }
+        .qr-placeholder {
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 3px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .qr-pixel {
+            width: 25%;
+            height: 25%;
+            background: #333;
+        }
+        .qr-pixel:nth-child(3n) { background: transparent; }
+
+        .story-content {
+            font-size: 15px;
+            color: var(--text-light);
+            text-align: justify;
+            margin-bottom: 35px;
+        }
+        .story-content p {
+            margin-bottom: 18px;
+        }
+        .story-highlight {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* 地圖導航優化 */
+        .map-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eaeaea;
+        }
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 220px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 頂部綠色旅行概念 -->
+        <div class="header-title">
+            <h1>綠色旅行<span>散步 / 腳踏車</span></h1>
+        </div>
+
+        <div class="main-content">
+            <!-- 左側：文青清新插畫卡片 -->
+            <div class="illustration-card">
+                <div class="sky"></div>
+                <div class="roof-top"></div>
+                <div class="roof-side"></div>
+                <div class="house-body">
+                    <div class="window-main">
+                        <div class="window-grid"></div>
+                    </div>
+                </div>
+                <div class="umbrella">
+                    <div class="umbrella-top"></div>
+                    <div class="umbrella-pole"></div>
+                </div>
+                <div class="flower-pots">
+                    <div class="pot"></div>
+                    <div class="pot green"></div>
+                    <div class="pot"></div>
+                </div>
+                <div class="shrub">
+                    <div class="shrub-trunk"></div>
+                </div>
+            </div>
+
+            <!-- 右側：清新文字資訊與地圖 -->
+            <div class="info-section">
+                <div class="brand-header">
+                    <h2 class="brand-title">森 咖啡</h2>
+                    <div class="brand-subtitle">Morikoohii</div>
+                </div>
+
+                <div class="meta-box">
+                    <div class="meta-text">
+                        <strong>地址資訊</strong><br>
+                        600嘉義市東區林森里共和路199巷1號
+                    </div>
+                    <div class="qr-placeholder" title="模擬手冊QR碼">
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                    </div>
+                </div>
+
+                <div class="story-content">
+                    <p><span class="story-highlight">Morikoohii 森 咖啡</span>，以極簡的自然感產品為雛形，結合日系的慢學與咖啡的滋潤香氣，希望讓每一位走進來的旅人，帶來一處能夠放慢腳步、享受片刻寧靜的空間。</p>
+                    <p>我們相信，一杯咖啡不只是日常的飲品，更是一段留給自己的時光。與朋友的輕鬆相聚，或是一個人靜靜享受下午後，以自然、溫暖、簡約為核心，讓有一次相遇都多一點療癒。讓每一杯咖啡都成為生活中值得珍惜的小美好。</p>
+                    <p class="story-highlight" style="font-style: italic;">Morikoohii 森 咖啡 － A Little Forest in Every Cup.<br>一杯咖啡，一片森林，一段美好的日常。</p>
+                </div>
+
+                <!-- Google地圖導航 -->
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Morikoohii%20%E6%A3%AE%20%E5%92%96%E5%95%A1&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

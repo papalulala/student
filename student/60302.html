@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠色旅行 - 60302</title>
+    <style>
+        :root {
+            --bg-color: #fcfaf2;
+            --text-color: #5c4433;
+            --primary-green: #5a7d65;
+            --accent-wood: #a67c52;
+            --window-yellow: #fcd116;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(92, 68, 51, 0.08);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+
+        /* 左側插圖區 */
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-title {
+            text-align: left;
+            width: 100%;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            color: var(--primary-green);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8c7665;
+            letter-spacing: 2px;
+        }
+
+        .house-illustration {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+        }
+
+        /* 右側內文區 */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .qr-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            background: #fff;
+        }
+
+        .address-box {
+            font-size: 0.95rem;
+            color: #7a6250;
+            margin-top: 10px;
+        }
+
+        .shop-brand {
+            font-size: 2.8rem;
+            color: var(--text-color);
+            font-weight: bold;
+            letter-spacing: 3px;
+            border-bottom: 2px solid var(--accent-wood);
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #6b5341;
+            text-align: justify;
+            white-space: pre-line;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #9c8675;
+            border-top: 1px dashed #e0d7cf;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 左側面板 -->
+        <div class="left-panel">
+            <div class="header-title">
+                <h1 class="main-title">綠色旅行</h1>
+                <div class="subtitle">散步 / 腳踏車</div>
+            </div>
+            
+            <!-- 純 SVG 重現日式小屋插圖 -->
+            <svg class="house-illustration" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 屋頂/上部深色遮板 -->
+                <rect x="30" y="30" width="440" height="30" rx="4" fill="#a67c52"/>
+                <rect x="40" y="25" width="420" height="8" rx="2" fill="#8c643f"/>
+                
+                <!-- 主屋體面 -->
+                <rect x="45" y="60" width="410" height="240" fill="#d9c3b0"/>
+                
+                <!-- 底部基座 -->
+                <rect x="35" y="300" width="430" height="15" fill="#a67c52"/>
+                
+                <!-- 左側大白色窗戶區域 -->
+                <rect x="65" y="85" width="220" height="180" fill="#ffffff" stroke="#c0a996" stroke-width="4"/>
+                
+                <!-- 左窗戶內的兩個小橘黃窗 -->
+                <!-- 第一個小窗 -->
+                <rect x="85" y="115" width="45" height="110" fill="#fcd116" rx="3"/>
+                <line x1="85" y1="170" x2="130" y2="170" stroke="#a67c52" stroke-width="4"/>
+                <line x1="107.5" y1="115" x2="107.5" y2="225" stroke="#a67c52" stroke-width="4"/>
+                
+                <!-- 第二個小窗 -->
+                <rect x="165" y="115" width="45" height="110" fill="#fcd116" rx="3"/>
+                <line x1="165" y1="170" x2="210" y2="170" stroke="#a67c52" stroke-width="4"/>
+                <line x1="187.5" y1="115" x2="187.5" y2="225" stroke="#a67c52" stroke-width="4"/>
+                
+                <!-- 右側格子大門 -->
+                <rect x="310" y="85" width="110" height="215" fill="#fcd116" stroke="#a67c52" stroke-width="5"/>
+                <!-- 格子線條 -->
+                <line x1="310" y1="128" x2="420" y2="128" stroke="#a67c52" stroke-width="3"/>
+                <line x1="310" y1="171" x2="420" y2="171" stroke="#a67c52" stroke-width="3"/>
+                <line x1="310" y1="214" x2="420" y2="214" stroke="#a67c52" stroke-width="3"/>
+                <line x1="310" y1="257" x2="420" y2="257" stroke="#a67c52" stroke-width="3"/>
+                
+                <line x1="337.5" y1="85" x2="337.5" y2="300" stroke="#a67c52" stroke-width="3"/>
+                <line x1="365" y1="85" x2="365" y2="300" stroke="#a67c52" stroke-width="3"/>
+                <line x1="392.5" y1="85" x2="392.5" y2="300" stroke="#a67c52" stroke-width="3"/>
+                
+                <!-- 右側紅色小裝飾物 -->
+                <rect x="425" y="140" width="12" height="35" fill="#c0392b" rx="2"/>
+            </svg>
+        </div>
+
+        <!-- 右側面板 -->
+        <div class="right-panel">
+            <div class="qr-section">
+                <!-- 模擬 QR Code 圖標 -->
+                <svg class="qr-code" viewBox="0 0 100 100">
+                    <rect x="0" y="0" width="100" height="100" fill="none" />
+                    <!-- 四個角的大方塊 -->
+                    <rect x="10" y="10" width="25" height="25" fill="#222" />
+                    <rect x="15" y="15" width="15" height="15" fill="#fff" />
+                    <rect x="65" y="10" width="25" height="25" fill="#222" />
+                    <rect x="70" y="15" width="15" height="15" fill="#fff" />
+                    <rect x="10" y="65" width="25" height="25" fill="#222" />
+                    <rect x="15" y="70" width="15" height="15" fill="#fff" />
+                    <!-- 隨機點綴模擬 QR -->
+                    <rect x="45" y="20" width="10" height="10" fill="#222" />
+                    <rect x="45" y="45" width="15" height="15" fill="#222" />
+                    <rect x="25" y="45" width="10" height="10" fill="#222" />
+                    <rect x="65" y="45" width="10" height="10" fill="#222" />
+                    <rect x="75" y="65" width="15" height="15" fill="#222" />
+                </svg>
+                <div class="address-box">
+                    <strong>600 嘉義市西區西榮里民族路642之1號</strong>
+                </div>
+            </div>
+
+            <div class="shop-brand">60302</div>
+
+            <div class="description">
+                位於嘉義市西區的伯拉日式甜點店，是一處適合愛甜點的朋友前往探索的小店。
+                日式甜點與嚴選食材的搭配、細膩的製作工藝，以及外觀與口感的平衡。
+                每一份甜點都蘊含著對美味的用心，無論是午後想來點甜蜜滋味，或是與親朋好友相約享受悠閒時光，都能為日常生活增添一份愉悅。
+                
+                走進甜點店，放慢忙碌的腳步，細細品味甜點帶來的幸福感，也是一種療癒身心的生活方式。若有機會來到嘉義市西區，不妨安排一趟甜點小旅行，親自探訪伯拉日式甜點，感受日式甜點的迷人魅力，為生活留下甜美的回憶。
+            </div>
+
+            <div class="footer-note">
+                © 2026 綠色旅行・自由慢活散步提案
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

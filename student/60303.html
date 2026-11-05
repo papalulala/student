@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠色旅行 - 民主火雞肉飯</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: #fcfbfa;
+            color: #333;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .left-panel {
+                flex: 1.2;
+            }
+            .right-panel {
+                flex: 1;
+            }
+        }
+        .left-panel {
+            padding: 40px;
+            background-color: #f7f5f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header-title {
+            margin-bottom: 40px;
+        }
+        .main-title {
+            font-size: 3rem;
+            color: #2d5a27;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 1.4rem;
+            color: #8b5a2b;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+        .illustration-container {
+            text-align: center;
+            margin-top: auto;
+        }
+        .illustration-container svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+        .right-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .address-tag {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .spot-name {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            font-weight: 800;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .description {
+            font-size: 1.05rem;
+            color: #4a4a4a;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .qrcode-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #ddd;
+            margin-top: 20px;
+        }
+        .qrcode-container svg {
+            width: 130px;
+            height: 130px;
+        }
+        .qrcode-text {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 左側面板：主題與插畫 -->
+    <div class="left-panel">
+        <div class="header-title">
+            <div class="main-title">綠色旅行</div>
+            <div class="subtitle">散步／腳踏車</div>
+        </div>
+        <div class="illustration-container">
+            <!-- 簡約復古建築向量風 SVG -->
+            <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+                <!-- 建築主體背景/陰影 -->
+                <path d="M 50 280 L 250 280 L 250 120 L 50 140 Z" fill="#d2c5b3" />
+                <!-- 建築正面 -->
+                <path d="M 60 270 L 240 270 L 240 130 L 60 148 Z" fill="#decbb7" />
+                <!-- 遮陽棚/屋頂線條 -->
+                <path d="M 50 145 L 245 125 L 250 135 L 55 155 Z" fill="#b85a38" />
+                <!-- 各層窗戶與結構 -->
+                <rect x="80" y="165" width="40" height="25" fill="#5c5246" rx="2" />
+                <rect x="140" y="160" width="40" height="25" fill="#5c5246" rx="2" />
+                <rect x="80" y="205" width="40" height="25" fill="#5c5246" rx="2" />
+                <rect x="140" y="200" width="40" height="25" fill="#5c5246" rx="2" />
+                <!-- 騎樓/一樓門面 -->
+                <path d="M 60 270 L 240 270 L 240 240 L 60 240 Z" fill="#8a2e2b" />
+                <rect x="85" y="245" width="30" height="25" fill="#efd9c1" />
+                <rect x="155" y="245" width="50" height="25" fill="#efd9c1" />
+                <!-- 右側相連建築結構 -->
+                <path d="M 240 270 L 340 270 L 340 110 L 240 130 Z" fill="#e59866" />
+                <path d="M 255 127 L 325 113 L 325 210 L 255 210 Z" fill="#f5b041" />
+                <rect x="270" y="140" width="40" height="50" fill="#784212" />
+                <!-- 地面基底 -->
+                <line x1="20" y1="270" x2="380" y2="270" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- 右側面板：內容資訊 -->
+    <div class="right-panel">
+        <div class="info-section">
+            <div class="address-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                嘉義市東區華南里民族路149號
+            </div>
+            <h1 class="spot-name">民主火雞肉飯</h1>
+        </div>
+        
+        <p class="description">
+            民主火雞肉飯是嘉義在地最具代表性的美食之一，以香嫩可口的火雞肉、淋上香氣十足的醬汁，以及粒粒分明的白飯，呈現出簡單卻令人回味無窮的好滋味。火雞肉口感鮮嫩，搭配獨特調味，讓人每一口都能感受到傳統嘉義火雞肉飯的魅力。無論是當地居民日常用餐，還是外地遊客前來品嚐，都能透過這道經典料理，感受嘉義濃厚的飲食文化與在地人情味。
+        </p>
+
+        <div class="qrcode-container">
+            <!-- 模擬 QR Code 視覺 -->
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="30" height="30" fill="#333" />
+                <rect x="5" y="5" width="20" height="20" fill="#fff" />
+                <rect x="10" y="10" width="10" height="10" fill="#333" />
+                
+                <rect x="70" y="0" width="30" height="30" fill="#333" />
+                <rect x="75" y="5" width="20" height="20" fill="#fff" />
+                <rect x="80" y="10" width="10" height="10" fill="#333" />
+                
+                <rect x="0" y="70" width="30" height="30" fill="#333" />
+                <rect x="5" y="75" width="20" height="20" fill="#fff" />
+                <rect x="10" y="80" width="10" height="10" fill="#333" />
+                
+                <rect x="40" y="10" width="15" height="10" fill="#333" />
+                <rect x="50" y="25" width="10" height="15" fill="#333" />
+                <rect x="15" y="45" width="20" height="10" fill="#333" />
+                <rect x="45" y="45" width="30" height="15" fill="#333" />
+                <rect x="80" y="45" width="15" height="20" fill="#333" />
+                <rect x="40" y="75" width="20" height="15" fill="#333" />
+                <rect x="75" y="75" width="15" height="15" fill="#333" />
+            </svg>
+            <div class="qrcode-text">掃描條碼獲取更多地圖資訊</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

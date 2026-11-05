@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60308 - 綠色旅行 民主雞肉飯</title>
+    <style>
+        :root {
+            --primary-color: #8c765c;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-card: #ffffff;
+            --bg-page: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 1050px;
+            min-height: 700px;
+            padding: 60px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+        }
+
+        /* Top Header Area spanning across or absolute */
+        .header-tags {
+            position: absolute;
+            top: 50px;
+            left: 60px;
+        }
+
+        .main-title {
+            font-size: 42px;
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .sub-title {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-top: 5px;
+            letter-spacing: 4px;
+            padding-left: 4px;
+        }
+
+        /* Left Side Illustration Area */
+        .left-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .illustration {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            aspect-ratio: 1.15;
+            position: relative;
+        }
+
+        /* Right Side Content Area */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding-bottom: 20px;
+        }
+
+        .info-section {
+            align-self: flex-end;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-right: 40px;
+        }
+
+        .qr-placeholder {
+            width: 110px;
+            height: 110px;
+            background: #000;
+            margin: 0 auto 12px;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 4px;
+        }
+        /* Simulated QR blocks */
+        .qr-placeholder div { background: #fff; }
+        .qr-placeholder div:nth-child(2n), .qr-placeholder div:nth-child(5), .qr-placeholder div:nth-child(9), .qr-placeholder div:nth-child(14) { background: #000; }
+
+        .address {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .brand-name {
+            font-size: 54px;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            font-family: "SimSun", "Noto Serif TC", serif;
+        }
+
+        .description {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: justify;
+            text-justify: inter-ideograph;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            max-width: 420px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+                min-height: auto;
+            }
+            .header-tags {
+                position: static;
+                margin-bottom: 30px;
+            }
+            .left-panel {
+                padding-top: 0;
+            }
+            .info-section {
+                align-self: center;
+                margin-right: 0;
+                margin-top: 40px;
+            }
+            .brand-name {
+                font-size: 42px;
+                text-align: center;
+                width: 100%;
+            }
+            .description {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Tags -->
+        <div class="header-tags">
+            <div class="main-title">綠色旅行</div>
+            <div class="sub-title">散步／腳踏車</div>
+        </div>
+
+        <!-- Left Illustration Panel -->
+        <div class="left-panel">
+            <svg class="illustration" viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background ground tone -->
+                <path d="M 50 350 Q 250 330 450 350 L 450 400 L 50 400 Z" fill="#ddccaa" opacity="0.3"/>
+                
+                <!-- Main Building block silhouette - stylized vector elements matching the unique architectural collage -->
+                <!-- Base / pillars shadow -->
+                <rect x="110" y="280" width="280" height="40" fill="#cc9966" />
+                <rect x="130" y="320" width="40" height="30" fill="#335533" />
+                <rect x="230" y="320" width="40" height="30" fill="#224422" />
+                <rect x="330" y="320" width="30" height="30" fill="#445534" />
+                
+                <!-- Red-brown facade overlapping layers -->
+                <polygon points="100,160 210,130 210,290 100,280" fill="#b06666" />
+                <polygon points="210,130 380,160 380,290 210,290" fill="#a05555" />
+                
+                <!-- Distinctive front prominent vertical geometric frames and shapes -->
+                <rect x="220" y="110" width="25" height="180" fill="#d2a679" />
+                <rect x="230" y="120" width="5" height="160" fill="#ffffff" />
+                
+                <!-- Side brown blocks -->
+                <polygon points="380,160 420,185 420,305 380,290" fill="#cd9a62" />
+                <rect x="425" y="185" width="15" height="150" fill="#801a1a" />
+                
+                <!-- Yellow/Ochre roof structures -->
+                <polygon points="120,135 220,110 220,130 115,150" fill="#ccaa66" />
+                <polygon points="245,115 370,135 370,160 245,135" fill="#c09050" />
+                
+                <!-- Windows and design accents -->
+                <rect x="120" y="175" width="25" height="20" fill="#7d3c3c" />
+                <rect x="155" y="170" width="40" height="35" fill="#ddaa88" />
+                <rect x="270" y="170" width="65" height="55" fill="#804040" />
+                <line x1="270" y1="195" x2="335" y2="195" stroke="#ffffff" stroke-width="2" />
+                
+                <!-- Foreground green/dark shapes -->
+                <polygon points="110,290 410,290 390,320 130,320" fill="#b04040" />
+                <polygon points="110,320 250,320 250,335 110,330" fill="#446644" />
+                <polygon points="250,320 390,320 380,338 250,335" fill="#335533" />
+            </svg>
+        </div>
+
+        <!-- Right Content Panel -->
+        <div class="right-panel">
+            <!-- QR code and address -->
+            <div class="info-section">
+                <div class="qr-placeholder">
+                    <div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div>
+                </div>
+                <div class="address">600嘉義市東區華南里民族路149號</div>
+            </div>
+
+            <!-- Main Topic Title -->
+            <div class="brand-name">民主雞肉飯</div>
+
+            <!-- Content Description Text -->
+            <div class="description">
+                民主雞肉飯以經典嘉義風味為特色，將香噴火雞肉搭配粒粒分明的白飯，淋上香醇醬汁，每一口都充滿濃郁迷人的古早味。用簡單卻令人回味的經典滋味，呈現著在地美食的魅力，無論是日常用餐或旅途中尋覓在地小吃，都是品嚐嘉義特色美食的好選擇。
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

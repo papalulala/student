@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠色旅行 - 抵嘉冰店</title>
+    <style>
+        :root {
+            --primary-color: #6d5343;
+            --text-color: #333333;
+            --bg-color: #fcfbfa;
+            --card-bg: #ffffff;
+            --accent-color: #e5af8a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1050px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+                gap: 40px;
+            }
+        }
+
+        /* Top Header Style */
+        .header-tag {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+        }
+
+        .header-title {
+            font-size: 38px;
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            color: #8c7662;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Left Column: Visual Illustration */
+        .visual-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        /* CSS Shop Illustration */
+        .shop-building {
+            width: 280px;
+            height: 380px;
+            background-color: #534b48; /* Dark brown main store background */
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Shop Signboard */
+        .shop-sign {
+            width: 100%;
+            padding: 15px 10px;
+            text-align: center;
+            color: #ecd7ca;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            border-bottom: 3px solid #665b57;
+            background-color: #433c3a;
+        }
+
+        /* Ice Cream Character Window */
+        .character-window {
+            width: 180px;
+            height: 120px;
+            background-color: #e5dcd6;
+            margin: 15px auto 0 auto;
+            border-radius: 40px 40px 10px 10px;
+            position: relative;
+            border: 4px solid #665b57;
+            overflow: hidden;
+        }
+
+        /* Ice Cream Cup & Bear Mascot Base */
+        .ice-cream-cup {
+            width: 120px;
+            height: 60px;
+            background: #cd9f81;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px 5px 25px 25px;
+            border-top: 5px solid #bd8e6f;
+        }
+
+        .waffle-pattern {
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), 
+                              linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 5px;
+        }
+
+        /* Bear Scoop */
+        .bear-scoop {
+            width: 100px;
+            height: 80px;
+            background: #fffdfa;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #dfd8d0;
+        }
+
+        /* Bear Ears (Cookies) */
+        .bear-ear-l, .bear-ear-r {
+            width: 32px;
+            height: 32px;
+            background: #b58564;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            border: 3px dashed #ecd7ca;
+        }
+        .bear-ear-l { left: -5px; }
+        .bear-ear-r { right: -5px; }
+
+        /* Bear Face Details */
+        .bear-eye-l, .bear-eye-r {
+            width: 6px;
+            height: 6px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+        }
+        .bear-eye-l { left: 30px; }
+        .bear-eye-r { right: 30px; }
+
+        .bear-snout {
+            width: 22px;
+            height: 16px;
+            background: #e3ded9;
+            border-radius: 50%;
+            position: absolute;
+            top: 42px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bear-nose {
+            width: 8px;
+            height: 5px;
+            background: #444;
+            border-radius: 50%;
+            margin: 3px auto 0 auto;
+        }
+
+        /* Awning / Counter ledge */
+        .shop-awning {
+            width: 100%;
+            height: 25px;
+            background-color: #83756f;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Lower Counter & Door section */
+        .shop-lower {
+            width: 100%;
+            height: 160px;
+            background-color: #6a605c;
+            position: relative;
+            padding: 15px;
+        }
+
+        .shop-door {
+            width: 70px;
+            height: 120px;
+            background-color: #3b3533;
+            border-left: 4px solid #7c706b;
+            position: absolute;
+            bottom: 0;
+            right: 25px;
+        }
+        .shop-window-low {
+            width: 100px;
+            height: 80px;
+            background-color: #4e4542;
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            border-bottom: 12px solid #3d3634;
+        }
+
+        /* Right Column: Content Side */
+        .content-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+
+        /* QR Code & Address Group */
+        .meta-block {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .qr-mock {
+            width: 85px;
+            height: 85px;
+            background: #fff;
+            border: 2px solid #333;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4fr;
+            position: relative;
+        }
+        /* Visual representation of a QR code */
+        .qr-mock::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; width: 22px; height: 22px; border: 4px solid #333;
+        }
+        .qr-mock::after {
+            content: '';
+            position: absolute;
+            bottom: 4px; left: 4px; width: 22px; height: 22px; border: 4px solid #333;
+        }
+        .qr-corner-topright {
+            position: absolute;
+            top: 4px; right: 4px; width: 22px; height: 22px; border: 4px solid #333;
+        }
+        .qr-random-dots {
+            position: absolute;
+            bottom: 10px; right: 10px; width: 30px; height: 30px;
+            background: linear-gradient(45deg, #333 25%, transparent 25%, #333 50%, transparent 50%, #333 75%, transparent 75%);
+            background-size: 8px 8px;
+        }
+
+        .address-text {
+            font-size: 13.5px;
+            color: #666;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Brand Title Style */
+        .brand-section {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .brand-main {
+            font-size: 56px;
+            font-weight: 900;
+            color: #111111;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+
+        .brand-sub {
+            font-size: 18px;
+            color: #555;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 5px;
+            letter-spacing: 4px;
+        }
+
+        /* Description Copy text */
+        .description-text {
+            font-size: 15px;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        /* Google Maps Interactive Section */
+        .map-section {
+            margin-top: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 220px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Fixed Series Header -->
+        <div class="header-tag">
+            <div class="header-title">綠色旅行</div>
+            <div class="header-subtitle">散步 ∕ 腳踏車</div>
+        </div>
+
+        <!-- Left Visual Side -->
+        <div class="visual-side">
+            <div class="shop-building">
+                <div class="shop-sign">抵嘉義式冰店</div>
+                <div class="character-window">
+                    <div class="bear-ear-l"></div>
+                    <div class="bear-ear-r"></div>
+                    <div class="bear-scoop">
+                        <div class="bear-eye-l"></div>
+                        <div class="bear-eye-r"></div>
+                        <div class="bear-snout">
+                            <div class="bear-nose"></div>
+                        </div>
+                    </div>
+                    <div class="ice-cream-cup">
+                        <div class="waffle-pattern"></div>
+                    </div>
+                </div>
+                <div class="shop-awning"></div>
+                <div class="shop-lower">
+                    <div class="shop-window-low"></div>
+                    <div class="shop-door"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Side -->
+        <div class="content-side">
+            <!-- Meta Section: QR and Address -->
+            <div class="meta-block">
+                <div class="qr-mock">
+                    <div class="qr-corner-topright"></div>
+                    <div class="qr-random-dots"></div>
+                </div>
+                <div class="address-text">
+                    600嘉義市西區福民里興業西路396號
+                </div>
+            </div>
+
+            <!-- Brand Typography -->
+            <div class="brand-section">
+                <div class="brand-main">抵嘉冰店</div>
+                <div class="brand-sub">義式冰店</div>
+            </div>
+
+            <!-- Description Body -->
+            <div class="description-text">
+                「抵嘉義式冰店」是一間結合嘉義在地特色與傳統古早味的冰店，以新鮮食材和用心製作，帶給顧客清涼又美味的享受。店內提供紅豆牛奶冰、手工芋圓、芒果冰等多種冰品，融合傳統與創新，滿足不同顧客的喜好。我們希望透過親切的服務與舒適環境，讓每位顧客都能享受美好的吃冰時光，感受最道地的人情味與在地文化。
+            </div>
+
+            <!-- Google Map Navigation Area -->
+            <div class="map-section">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48792882583!2d120.4402636!3d23.4613589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e95c1c8a148a7%3A0xc6cbfa79ef1c4639!2z5oq15Zi嘉576p5byP5Yaw5bqX!5e0!3m2!1szh-TW!2stw!4v1710000000000!5m2!1szh-TW!2stw" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>603009 - 林聰明沙鍋魚頭</title>
+    <style>
+        :root {
+            --primary-color: #8A6D53;
+            --text-dark: #222222;
+            --bg-light: #FBF9F6;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 50px;
+            position: relative;
+        }
+
+        /* Top Header Area spanned across columns or nested */
+        .header-badge {
+            grid-column: 1 / -1;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 38px;
+            color: #795738;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            font-size: 18px;
+            color: #555;
+            letter-spacing: 4px;
+            padding-left: 5px;
+        }
+
+        /* Left Column: Visual Illustration */
+        .visual-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+        }
+
+        /* Pure CSS Illustration of the building */
+        .building-art {
+            position: relative;
+            width: 320px;
+            height: 380px;
+            margin-top: 20px;
+        }
+
+        .roof-brown {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            width: 220px;
+            height: 50px;
+            background-color: #8C4F35;
+            transform: skewX(-20deg);
+            border-radius: 4px;
+            z-index: 5;
+        }
+
+        .roof-orange {
+            position: absolute;
+            top: 75px;
+            left: 45px;
+            width: 235px;
+            height: 18px;
+            background-color: #D38E5F;
+            transform: skewX(-15deg);
+            z-index: 6;
+        }
+
+        .roof-edge {
+            position: absolute;
+            top: 85px;
+            left: 270px;
+            width: 12px;
+            height: 12px;
+            background-color: #3D3530;
+            border-radius: 50%;
+            z-index: 7;
+        }
+
+        .wall-left-black {
+            position: absolute;
+            top: 90px;
+            left: 40px;
+            width: 45px;
+            height: 200px;
+            background-color: #1A1A1A;
+            transform: skewY(15deg);
+            z-index: 2;
+        }
+
+        .wall-center-tan {
+            position: absolute;
+            top: 100px;
+            left: 80px;
+            width: 95px;
+            height: 160px;
+            background-color: #E6D2B5;
+            z-index: 3;
+        }
+
+        .wall-right-purple {
+            position: absolute;
+            top: 110px;
+            left: 170px;
+            width: 115px;
+            height: 180px;
+            background-color: #BCA391;
+            border-left: 3px solid #7D6351;
+            z-index: 2;
+        }
+
+        .window-orange {
+            position: absolute;
+            top: 140px;
+            left: 205px;
+            width: 45px;
+            height: 100px;
+            border: 4px solid #C5834C;
+            background-color: transparent;
+            z-index: 4;
+        }
+
+        .window-line {
+            position: absolute;
+            top: 140px;
+            left: 225px;
+            width: 4px;
+            height: 100px;
+            background-color: #C5834C;
+            z-index: 4;
+        }
+
+        .sign-blue {
+            position: absolute;
+            top: 85px;
+            left: 70px;
+            width: 150px;
+            height: 25px;
+            background-color: #92B1B6;
+            transform: rotate(-2deg);
+            z-index: 8;
+            border-bottom: 2px solid #5A757A;
+        }
+
+        .beam-brown {
+            position: absolute;
+            top: 255px;
+            left: 170px;
+            width: 120px;
+            height: 15px;
+            background-color: #C5834C;
+            z-index: 4;
+        }
+
+        /* Right Column: Content Area */
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .qr-address-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .qr-code {
+            width: 85px;
+            height: 85px;
+            background-color: #222;
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+        }
+        
+        /* Simulating QR code look */
+        .qr-pixel { background: #fff; }
+        .qr-pixel:nth-child(2n) { background: #222; }
+        .qr-pixel:nth-child(3n) { background: #fff; }
+        .qr-pixel:nth-child(5n) { background: #222; }
+
+        .address-text {
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .brand-title {
+            font-size: 52px;
+            font-weight: 900;
+            color: #1A1A1A;
+            letter-spacing: 6px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-family: 'KaiTi', 'BiauKai', serif;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* Google Map Integration */
+        .map-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #EAEAEA;
+            margin-top: auto;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+            .building-art {
+                width: 100%;
+                max-width: 320px;
+                height: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header-badge">
+            <h1 class="main-title">綠色旅行</h1>
+            <div class="sub-title">散步／腳踏車</div>
+        </div>
+
+        <!-- Left Graphic Column -->
+        <div class="visual-column">
+            <div class="building-art">
+                <div class="roof-brown"></div>
+                <div class="roof-orange"></div>
+                <div class="roof-edge"></div>
+                <div class="sign-blue"></div>
+                <div class="wall-left-black"></div>
+                <div class="wall-center-tan"></div>
+                <div class="wall-right-purple"></div>
+                <div class="window-orange"></div>
+                <div class="window-line"></div>
+                <div class="beam-brown"></div>
+            </div>
+        </div>
+
+        <!-- Right Content Column -->
+        <div class="content-column">
+            <!-- QR and Address -->
+            <div class="qr-address-container">
+                <div class="qr-code">
+                    <!-- Fake structural pixels to mimic QR design -->
+                    <div style="background:#fff; grid-column: span 2; grid-row: span 2; border: 4px solid #222;"></div>
+                    <div class="qr-pixel"></div><div class="qr-pixel"></div>
+                    <div class="qr-pixel"></div><div class="qr-pixel"></div>
+                    <div class="qr-pixel"></div><div class="qr-pixel"></div>
+                    <div style="background:#fff; grid-column: span 2; grid-row: span 2; border: 4px solid #222;"></div>
+                </div>
+                <div class="address-text">
+                    600嘉義市東區中央里中正路361號
+                </div>
+            </div>
+
+            <!-- Main Brand Title -->
+            <h2 class="brand-title">林聰明沙鍋魚頭</h2>
+
+            <!-- Description Text -->
+            <p class="description">
+                林聰明沙鍋魚頭是嘉義知名的在地美食，以招牌沙鍋魚頭聞名。湯頭濃郁鮮甜，融合炸魚頭、白菜、豆腐及多種配料，口感豐富、香氣十足，深受在地居民與各地遊客喜愛。憑藉獨特的風味與經典料理，成為許多人來到嘉義必吃的美食之一，展現嘉義深厚的飲食文化與在地特色。
+            </p>
+
+            <!-- Google Maps Navigation Section -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.8329676752765!2d120.4497677!3d23.4818451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e9433e5ffffff%3A0x6b7725807963fc23!2z5p6X6IGw5piO5rKZ6YGN6a2p6aCtIChS5Lit5q2j總店)!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60323 - 綠色旅行・森林之歌</title>
+    <style>
+        :root {
+            --primary-color: #6d4c41;
+            --accent-color: #8d6e63;
+            --text-dark: #333333;
+            --bg-light: #fdfbf7;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        header {
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .visual-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #faf7f2;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px dashed #dcd6cd;
+        }
+
+        .mock-illustration {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .location-tag {
+            display: inline-block;
+            background-color: #f0ebe1;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .spot-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .closing {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 12px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.85rem;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="main-title">綠色旅行</h1>
+            <p class="subtitle">散步 / 腳踏車</p>
+        </header>
+
+        <div class="content-grid">
+            <div class="visual-section">
+                <!-- SVG Vector representation inspired by the manual illustration -->
+                <svg class="mock-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ground/Background -->
+                    <path d="M 0,350 Q 200,320 400,350 L 400,400 L 0,400 Z" fill="#6d8266"/>
+                    <path d="M 0,300 Q 150,280 300,320 L 400,320 L 400,400 L 0,400 Z" fill="#54664d" opacity="0.7"/>
+                    
+                    <!-- Steps / Pathway -->
+                    <polygon points="120,380 280,380 230,260 170,260" fill="#a8a297"/>
+                    <line x1="130" y1="360" x2="270" y2="360" stroke="#ffffff" stroke-width="4" opacity="0.6"/>
+                    <line x1="145" y1="330" x2="255" y2="330" stroke="#ffffff" stroke-width="4" opacity="0.6"/>
+                    <line x1="160" y1="300" x2="240" y2="300" stroke="#ffffff" stroke-width="4" opacity="0.6"/>
+                    <line x1="170" y1="275" x2="230" y2="275" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+
+                    <!-- Main Dome Structure (Song of Forest inspired) -->
+                    <path d="M 120,260 C 110,120 290,120 280,260 Z" fill="#c49056"/>
+                    <path d="M 140,260 C 135,140 265,140 260,260 Z" fill="#b07d43" opacity="0.8"/>
+                    
+                    <!-- Central Entrance/Window Design -->
+                    <path d="M 175,260 L 175,210 C 175,185 225,185 225,210 L 225,260 Z" fill="#3e3a36"/>
+                    <!-- Window Grid Lines -->
+                    <line x1="175" y1="215" x2="225" y2="215" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+                    <line x1="175" y1="235" x2="225" y2="235" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+                    <line x1="200" y1="190" x2="200" y2="260" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+
+                    <!-- Decorative side elements (Trees/Structures) -->
+                    <polygon points="40,280 90,260 130,310 30,320" fill="#4d5f47"/>
+                    <polygon points="320,270 370,250 390,300 310,290" fill="#4d5f47"/>
+                </svg>
+            </div>
+
+            <div class="info-section">
+                <div class="location-tag">📍 600嘉義市東區文化路</div>
+                <h2 class="spot-title">森林之歌</h2>
+                
+                <p class="description">
+                    「森林之歌」是一個充滿自然氣息與溫暖氛圍的地方，以森林為靈感，將綠意、寧靜與美感融入每一個角落。
+                </p>
+                <p class="description">
+                    走進森林之歌，彷彿置身於大自然的懷抱中，讓人暫時遠離城市的喧囂，享受片刻的放鬆與愜意。
+                </p>
+                
+                <p class="closing">
+                    期待每一位來訪的朋友，都能在此感受自然的魅力，聆聽心中最純粹的聲音。
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p>網頁代碼: 60323 &copy; 2026 綠色旅行導覽網頁</p>
+        </footer>
+    </div>
+
+</body>
+</html>
